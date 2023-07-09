@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballWebAPI", "FootballWebAPI\FootballWebAPI.csproj", "{446CB5F4-145C-4D17-8D87-921BCA507A9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{A72743D7-7C09-4409-A561-16885E0910AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{3C59959A-2BB3-46D9-BF45-294036471C12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{446CB5F4-145C-4D17-8D87-921BCA507A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{446CB5F4-145C-4D17-8D87-921BCA507A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{446CB5F4-145C-4D17-8D87-921BCA507A9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A72743D7-7C09-4409-A561-16885E0910AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A72743D7-7C09-4409-A561-16885E0910AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A72743D7-7C09-4409-A561-16885E0910AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A72743D7-7C09-4409-A561-16885E0910AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C59959A-2BB3-46D9-BF45-294036471C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C59959A-2BB3-46D9-BF45-294036471C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C59959A-2BB3-46D9-BF45-294036471C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C59959A-2BB3-46D9-BF45-294036471C12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
