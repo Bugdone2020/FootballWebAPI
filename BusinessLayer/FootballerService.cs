@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using DataAccessLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,39 +10,39 @@ namespace BusinessLayer
 {
     public class FootballerService : IFootballerService
     {
-        private readonly IFootballerRepository _footballerRepository;
+        private readonly IGenericRepository<Footballer> _footballerRepository;
 
-        public FootballerService(IFootballerRepository footballerRepository)
+        public FootballerService(IGenericRepository<Footballer> footballerRepository)
         {
             _footballerRepository = footballerRepository;
         }
-        public Guid AddFootballer(Footballer footballer)
+        public async Task<Guid> AddFootballer(Footballer footballer)
         {
             ValidateFootballerState(footballer);
 
-            return _footballerRepository.Add(footballer);
+            return await _footballerRepository.Add(footballer);
         }
 
-        public bool DeleteFootballerById(Guid id)
+        public async Task<bool> DeleteFootballerById(Guid id)
         {
-            return _footballerRepository.DeleteById(id);
+            return await _footballerRepository.DeleteById(id);
         }
 
-        public IEnumerable<Footballer> GetAllFootballer()
+        public async Task<IEnumerable<Footballer>> GetAllFootballer()
         {
-            return _footballerRepository.GetAll();
+            return await _footballerRepository.GetAll();
         }
 
-        public Footballer GetFootballerById(Guid id)
+        public async Task<Footballer> GetFootballerById(Guid id)
         {
-            return _footballerRepository.GetById(id);
+            return await _footballerRepository.GetById(id);
         }
 
-        public bool UpdateFootballer(Footballer footballer)
+        public async Task<bool> UpdateFootballer(Footballer footballer)
         {
             ValidateFootballerState(footballer);
 
-            return _footballerRepository.Update(footballer);
+            return await _footballerRepository.Update(footballer);
         }
 
         private void ValidateFootballerState(Footballer footballer)

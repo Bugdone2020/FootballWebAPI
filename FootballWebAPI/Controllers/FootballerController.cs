@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using DataAccessLayer;
+using DataAccessLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -23,15 +24,15 @@ namespace FootballWebAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Footballer> GetAllFootballers()
+        public async Task<IEnumerable<Footballer>> GetAllFootballers()
         {
-            return _footballerService.GetAllFootballer();  
+            return await _footballerService.GetAllFootballer();  
         }
 
         [HttpGet("{id}")]
-        public Footballer GetFootballerById(Guid id)
+        public async Task<Footballer> GetFootballerById(Guid id)
         {
-            return _footballerService.GetFootballerById(id);
+            return await _footballerService.GetFootballerById(id);
         }
 
         [HttpPost]
@@ -51,16 +52,18 @@ namespace FootballWebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public bool UpdateFootballer(Guid id, Footballer footballer)
+        public async Task<IActionResult> UpdateFootballer(Guid id, Footballer footballer)
         {
             footballer.Id = id;
-            return _footballerService.UpdateFootballer(footballer);
+
+            var result = await _footballerService.UpdateFootballer(footballer);
+            return result ? StatusCode(200) : StatusCode(400); 
         }
 
         [HttpDelete("{id}")]
-        public bool DeleteFootballer(Guid id)
+        public async Task<bool> DeleteFootballer(Guid id)
         {
-            return _footballerService.DeleteFootballerById(id);
+            return await _footballerService.DeleteFootballerById(id);
         }
     }
 }

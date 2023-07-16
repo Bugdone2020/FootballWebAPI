@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DataAccessLayer.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace DataAccessLayer

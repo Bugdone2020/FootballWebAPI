@@ -1,11 +1,11 @@
-﻿using System;
+﻿using DataAccessLayer.Entities;
+using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace DataAccessLayer
+namespace DataAccessLayer.Entities
 {
-    public class Footballer
+    public class Footballer : BaseEntity
     {
-        public Guid Id { get; set; }
         [Required]
         [MinLength(3)]
         [MaxLength(40)]
